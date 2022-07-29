@@ -45,13 +45,13 @@ def wishMe():
     hour = datetime.datetime.now().hour
     # print(hour)
     if hour >= 0 and hour < 12:
-        speak("Good Morning" + MASTER)
+        speak(f"Good Morning{MASTER}")
 
     elif hour >= 12 and hour < 18:
-        speak("Good Afternoon" + MASTER)
+        speak(f"Good Afternoon{MASTER}")
 
     else:
-        speak("Good Evening" + MASTER)
+        speak(f"Good Evening{MASTER}")
 
     # speak("Hey I am Jarvis. How may I help you")
 
@@ -69,7 +69,7 @@ def takeCommand():
     try:
         print("Recognizing....")
         query = r.recognize_google(audio, language='en-in')
-        print("user said: " + query)
+        print(f"user said: {query}")
 
     except sr.UnknownValueError:
         print("Sorry Could You please try again")
